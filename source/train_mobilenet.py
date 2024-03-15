@@ -1,22 +1,21 @@
 # mobilenet模型训练代码，训练的模型会保存在models目录下，折线图会保存在results目录下
-
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from time import *
 
 
-# 数据集加载函数，指明数据集的位置并统一处理为imgheight*imgwidth的大小，同时设置batch
-def data_load(data_dir, test_data_dir, img_height, img_width, batch_size):
+# 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
+def data_load(train_dir, test_dir, img_height, img_width, batch_size):
     # 加载训练集
     train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        data_dir,
+        train_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),
         batch_size=batch_size)
     # 加载测试集
     val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        test_data_dir,
+        test_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),
@@ -76,7 +75,7 @@ def show_loss_acc(history):
         plt.ylabel('cross-entropy')
         plt.title('test and original loss')
         plt.xlabel('round')
-        plt.savefig('results/results_mobilenet.png', dpi=100)
+        plt.savefig('../results/mobilenet.png', dpi=100)
     else:
         print("No history records found for validation accuracy or validation loss.")
 
@@ -85,15 +84,15 @@ def train(epochs):
     # 开始训练，记录开始时间
     begin_time = time()
     # 加载数据集， 修改为你的数据集的路径
-    train_ds, val_ds, class_names = data_load("/test",
-                                              "/original", 224, 224, 16)
+    train_ds, val_ds, class_names = data_load("../datasets/test",
+                                              "../datasets/original", 224, 224, 16)
     print(class_names)
     # 加载模型
     model = model_load(class_num=len(class_names))
     # 指明训练的轮数epoch，开始训练
     history = model.fit(train_ds, validation_data=val_ds, epochs=epochs)
     # 保存模型， 修改为你要保存的模型的名称
-    model.save("models/test_v_2.h5")
+    model.save("../models/mobilenet.h5")
     # 记录结束时间
     end_time = time()
     run_time = end_time - begin_time

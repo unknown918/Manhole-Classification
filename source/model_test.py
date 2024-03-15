@@ -1,5 +1,4 @@
 # 模型测试代码，测试会生成热力图，热力图会保存在results目录下
-
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np

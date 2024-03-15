@@ -4,7 +4,7 @@ import numpy as np
 from tqdm import tqdm
 
 # 定义数据集根目录
-dataset_root = '/Users/yangqianjing/dev/Python/ManholeCoverDetection/original'
+dataset_root = '../original'
 
 # 定义划分比例
 train_ratio = 0.6
@@ -35,9 +35,9 @@ for folder in os.listdir(dataset_root):
         test_files = files[num_train + num_val:]
 
         # 定义保存路径
-        train_folder = os.path.join('/Users/yangqianjing/dev/Python/ManholeCoverDetection/datasets/train', folder)
-        val_folder = os.path.join('/Users/yangqianjing/dev/Python/ManholeCoverDetection/datasets/val', folder)
-        test_folder = os.path.join('/Users/yangqianjing/dev/Python/ManholeCoverDetection/datasets/test', folder)
+        train_folder = os.path.join('../datasets/train', folder)
+        val_folder = os.path.join('../datasets/val', folder)
+        test_folder = os.path.join('../test', folder)
 
         # 创建保存文件的文件夹
         os.makedirs(train_folder, exist_ok=True)

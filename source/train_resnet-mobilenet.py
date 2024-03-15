@@ -97,7 +97,7 @@ def show_loss_acc(history):
         plt.title('test and original loss')
         plt.xlabel('round')
         # 保存结果图
-        plt.savefig('../results/results_res_mobilenet.png', dpi=100)
+        plt.savefig('../results/res_mobilenet.png', dpi=100)
     else:
         print("No history records found for validation accuracy or validation loss.")
 
