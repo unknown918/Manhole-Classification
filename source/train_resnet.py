@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from time import *
 
 
-# 数据集加载函数，指明数据集的位置并统一处理为imgheight*imgwidth的大小，同时设置batch
+# 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
 def data_load(data_dir, test_data_dir, img_height, img_width, batch_size):
     # 加载训练集
     train_ds = tf.keras.preprocessing.image_dataset_from_directory(
