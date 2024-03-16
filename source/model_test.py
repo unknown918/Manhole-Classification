@@ -8,10 +8,10 @@ plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
 
 
 # 数据加载，分别从训练的数据集的文件夹和测试的文件夹中加载训练集和验证集
-def data_load(test_data_dir, img_height, img_width, batch_size):
+def data_load(test_dir, img_height, img_width, batch_size):
     # 加载测试集
     val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        test_data_dir,
+        test_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),

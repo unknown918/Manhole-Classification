@@ -1,19 +1,20 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from time import time
+import numpy as np
 
 
 # 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
-def data_load(data_dir, test_data_dir, img_height, img_width, batch_size):
+def data_load(train_dir, val_dir, img_height, img_width, batch_size):
     train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        data_dir,
+        train_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),
         batch_size=batch_size)
 
     val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        test_data_dir,
+        val_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),
@@ -123,7 +124,45 @@ def train(epochs):
     print('该循环程序运行时间：', run_time, "s")
     # 绘制模型训练过程图
     show_loss_acc(history)
+    return val_ds
+
+
+def visualize_tsne_with_boundaries(val, labels):
+    model = tf.keras.models.load_model('../models/res_mobile.h5')
+
+    # 获取模型的倒数第二层的输出作为隐藏层表示
+    intermediate_layer_model = tf.keras.Model(inputs=model.input, outputs=model.layers[-2].output)
+    hidden_representation = intermediate_layer_model.predict(val)
+
+    # 使用 TensorFlow 实现 t-SNE
+    tsne = tf.math.tSNE(perplexity=30, learning_rate=10)
+    tsne_representation = tsne(hidden_representation)
+
+    # 使用 KMeans 对降维后的表示进行聚类
+    kmeans = tf.compat.v1.estimator.experimental.KMeans(num_clusters=len(np.unique(labels)), use_mini_batch=False)
+    clusters = kmeans.predict(tsne_representation)
+
+    # 绘制 t-SNE 可视化结果
+    plt.figure(figsize=(12, 8))
+    plt.scatter(tsne_representation[:, 0], tsne_representation[:, 1], c=labels, cmap='viridis')
+    plt.xlabel('t-SNE Component 1')
+    plt.ylabel('t-SNE Component 2')
+    plt.title('t-SNE Visualization with Clusters')
+    plt.colorbar()
+
+    # 绘制类别边界
+    for i in range(len(np.unique(labels))):
+        plt.scatter(tsne_representation[clusters == i, 0], tsne_representation[clusters == i, 1],
+                    label=f'Cluster {i}')
+
+    plt.legend()
+    plt.savefig('../results/visualization.png')
+    plt.show()
 
 
 if __name__ == '__main__':
-    train(epochs=15)
+    val = train(epochs=15)
+
+    labels = ['broke', 'circle', 'good', 'lose', 'uncovered']
+
+    visualize_tsne_with_boundaries(val, labels)

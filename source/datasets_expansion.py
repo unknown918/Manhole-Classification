@@ -41,7 +41,7 @@ def expand_dataset(input_folder, output_folder, operations):
 
 if __name__ == "__main__":
     input_folder = "../datasets/train"
-    output_folder = "../train"
+    output_folder = "../datasets/train"
     operations = ['gaussian_blur', 'brightness_adjustment', 'noise_addition', 'rotation']
 
     expand_dataset(input_folder, output_folder, operations)

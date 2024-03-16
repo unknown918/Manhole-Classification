@@ -5,7 +5,7 @@ from time import *
 
 
 # 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
-def data_load(train_dir, test_dir, img_height, img_width, batch_size):
+def data_load(train_dir, val_dir, img_height, img_width, batch_size):
     # 加载训练集
     train_ds = tf.keras.preprocessing.image_dataset_from_directory(
         train_dir,
@@ -15,7 +15,7 @@ def data_load(train_dir, test_dir, img_height, img_width, batch_size):
         batch_size=batch_size)
     # 加载测试集
     val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-        test_dir,
+        val_dir,
         label_mode='categorical',
         seed=123,
         image_size=(img_height, img_width),
@@ -85,7 +85,7 @@ def train(epochs):
     begin_time = time()
     # 加载数据集， 修改为你的数据集的路径
     train_ds, val_ds, class_names = data_load("../datasets/test",
-                                              "../datasets/original", 224, 224, 16)
+                                              "../datasets/val", 224, 224, 16)
     print(class_names)
     # 加载模型
     model = model_load(class_num=len(class_names))

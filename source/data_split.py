@@ -37,7 +37,7 @@ for folder in os.listdir(dataset_root):
         # 定义保存路径
         train_folder = os.path.join('../datasets/train', folder)
         val_folder = os.path.join('../datasets/val', folder)
-        test_folder = os.path.join('../test', folder)
+        test_folder = os.path.join('../datasets/test', folder)
 
         # 创建保存文件的文件夹
         os.makedirs(train_folder, exist_ok=True)
