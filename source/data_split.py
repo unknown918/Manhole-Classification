@@ -7,9 +7,9 @@ from tqdm import tqdm
 dataset_root = '../original'
 
 # 定义划分比例
-train_ratio = 0.6
-val_ratio = 0.2
-test_ratio = 0.2
+train_ratio = 8/13
+val_ratio = 3/13
+test_ratio = 2/13
 
 # 遍历数据集根目录下的子文件夹
 for folder in os.listdir(dataset_root):
@@ -28,6 +28,7 @@ for folder in os.listdir(dataset_root):
         num_samples = len(files)
         num_train = int(train_ratio * num_samples)
         num_val = int(val_ratio * num_samples)
+        num_test = num_samples - num_train - num_val
 
         # 划分数据集
         train_files = files[:num_train]
