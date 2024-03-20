@@ -1,5 +1,6 @@
 import os
 import shutil
+
 import numpy as np
 from tqdm import tqdm
 
@@ -7,9 +8,9 @@ from tqdm import tqdm
 dataset_root = '../original'
 
 # 定义划分比例
-train_ratio = 8/13
-val_ratio = 3/13
-test_ratio = 2/13
+train_ratio = 8 / 13
+val_ratio = 3 / 13
+test_ratio = 2 / 13
 
 # 遍历数据集根目录下的子文件夹
 for folder in os.listdir(dataset_root):

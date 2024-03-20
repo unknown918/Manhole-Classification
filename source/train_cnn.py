@@ -1,7 +1,8 @@
 # cnn模型训练代码，训练的代码会保存在models目录下，折线图会保存在results目录下
-import tensorflow as tf
-import matplotlib.pyplot as plt
 from time import *
+
+import matplotlib.pyplot as plt
+import tensorflow as tf
 
 
 # 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch

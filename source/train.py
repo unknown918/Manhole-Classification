@@ -1,9 +1,10 @@
-import tensorflow as tf
-import matplotlib.pyplot as plt
 from time import time
+
+import matplotlib.pyplot as plt
 import numpy as np
+import tensorflow as tf
 from sklearn.manifold import TSNE
-from sklearn.cluster import KMeans
+
 
 # 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
 def data_load(train_dir, val_dir, img_height, img_width, batch_size):

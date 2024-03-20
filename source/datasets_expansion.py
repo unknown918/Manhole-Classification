@@ -1,4 +1,5 @@
 import os
+
 import cv2
 import numpy as np
 from tqdm import tqdm
@@ -47,4 +48,3 @@ if __name__ == "__main__":
     input_folder = "../datasets/train"
     output_folder = "../datasets/train"
     expand_dataset(input_folder, output_folder)
-
