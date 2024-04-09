@@ -1,18 +1,101 @@
-**python = 3.10**
+## Object Detection and Classification with Ensemble Model
 
-**在原数据集上运行data_split.py和datasets_expansion.py即可获得拓展数据集**
+This project implements an object detection and classification system using an ensemble model consisting of MobileNetV2
+and ResNet50 architectures. The system is trained to detect and classify objects within images using bounding box
+annotations.
+
+### Project Structure
+
+- `models/`: Directory to store trained model weights.
+- `results/`: Directory to store output results such as training curves and detection results.
+- `train_xmls/`: Directory containing XML annotations for training images each file correspond to multiple objects in
+  one image.
+- `test_xmls/`: Directory containing XML annotations for testing images each file correspond to multiple objects in one
+  image.
+- `datasets_expansion.py`: Utility functions to expand datasets, using six different augmentation techniques.
+- `xml_data_split.py`: Script to split XML annotations into training and testing sets.
+- `xml_split.py`: Split XML containing multiple objects into multiple XML files each containing one object.
+- `train.py`: Script to train the ensemble model using expanded datasets.
+- `train_v2.py`: Script to train the ensemble model using XML annotations.
+- `t-SNE.py`: Script to visualize the feature space of the ensemble model using t-SNE.
+
+### Requirements
+
+- Python >= 3.10
+
+### Setup
+
+1. **Clone the repository using the following command:**
+
+    ```bash
+    git clone https://github.com/yourusername/yourproject.git
+    ```
+
+2. **Install the required packages:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Train the model:**
+
+    ```bash
+    python3 train.py
+    ```
+
+4. **Visualize the feature space:**
+
+    ```bash
+    python3 t-SNE.py
+    ```
+
+### Tips
+
+- **Different Frameworks:** We trained the models separately in two frameworks, one using TensorFlow with image data,
+  and the other using PyTorch with XML files. If you intend to train based on PyTorch, please run **train_v2.py**. This
+  program conducts testing automatically after training and saves the results in the 'result.txt' file. If you prefer
+  training
+  with TensorFlow, you can directly execute the command line above.
+- **Datasets Expansion:** We expanded the datasets using six different augmentation techniques, including rotation,
+  gaussian blur, noise addition and brightness adjustment. You can use the **datasets_expansion.py** script to expand
+  your datasets.
+
+### Model Architecture
+
+- The ensemble model ensembles features from MobileNetV2, ResNet50 and YOLOv8 architectures.
+- MobileNetV2 is used for its lightweight design and ResNet50 for its deeper architecture, providing a balance between
+  speed and accuracy.
+- YOLOv8 is used for its object detection capabilities, which are combined with the classification features of
+  MobileNetV2 and ResNet50.
+  ![Ensemble Model](images/diagram.png)
+
+### Results
+
+- **Training Loss Curve:**
+- The training loss curve is generated after training the model, showing the progression of loss over epochs.
+- ![Training Loss Curve](images/loss_curve.png)
+- **Detection Results:** Detection results are stored in results/result.txt, including image name, predicted labels,
+  confidence scores, and bounding box coordinates, we also provide the visualization of the detection results.
+- ![Detection Results](images/detection_results.png)
+- **Feature Space Visualization:** The feature space of the ensemble model is visualized using t-SNE, showing the
+  distribution of features in a 2D space.
+- ![t-SNE](images/t-SNE.png)
+- **Datasets Refinement:** Our t-SNE plot only requires a click to display the dataset image corresponding to each
+  point, this enables you refine your dataset based on the results of t-SNE.
+- ![Datasets Refinement](images/t-SNE-to-dataset.png)
+
+### Contributors
+
+- [qianjing yang](https://github.com/unknown918)
+- [jian lei](https://github.com/LeiShang2004?query=2256726183%40qq.com)
+
+### Acknowledgments
+
+Mention any acknowledgments or credits for libraries, datasets, or tutorials used in the project.
+
+### Contact
+
+For any inquiries or issues, please contact 8208221520@csu.edu.cn.
 
 
-如果模型在训练集上的正确率只有70%，那么可能有以下几种方法可以尝试改进模型的性能：
 
-1. **增加模型复杂性**：如果模型过于简单，可能无法捕获数据中的所有模式。可以尝试增加更多的层或者更多的神经元。
-
-2. **更多的数据**：如果可用的训练数据不够，模型可能无法学习到足够的模式。可以尝试收集更多的训练数据。
-
-3. **数据增强**：通过对训练数据进行一些变换（如旋转、缩放、剪切等），可以人为地增加数据的多样性，使模型能够更好地泛化。
-
-4. **正则化**：使用正则化技术（如L1、L2或dropout）可以防止模型过拟合，提高模型在训练集上的性能。
-
-5. **优化算法**：可以尝试使用不同的优化算法（如Adam、RMSprop等）或者调整学习率。
-
-6. **早停**：当验证损失不再减少时，停止训练可以防止模型过拟合。
