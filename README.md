@@ -73,22 +73,22 @@ annotations.
 
 - **Training Loss Curve:**
   The training loss curve is generated after training the model, showing the progression of loss over epochs.
-- ![Training Loss Curve](images/loss_curve.png)
+  ![Training Loss Curve](images/loss_curve.png)
 
 - **Detection Results:**
   Detection results are stored in results/result.txt, including image name, predicted labels,
   confidence scores, and bounding box coordinates, we also provide the visualization of the detection results.
-- ![Detection Results](images/detection_results.png)
+  ![Detection Results](images/detection_results.png)
 
 - **Feature Space Visualization:**
 - The feature space of the ensemble model is visualized using t-SNE, showing the
   distribution of features in a 2D space.
-- ![t-SNE](images/t-SNE-to-dataset.png)
+  ![t-SNE](images/t-SNE-to-dataset.png)
 
 - **Datasets Refinement:**
 - Our t-SNE plot only requires a click to display the dataset image corresponding to each
   point, this enables you refine your dataset based on the results of t-SNE.
-- ![Datasets Refinement](images/t-SNE.png)
+  ![Datasets Refinement](images/t-SNE.png)
 
 ### Computational Power Requirements
 
