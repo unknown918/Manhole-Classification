@@ -46,7 +46,7 @@ def parse_xml(xml_file):
 # Initialize the model
 model = EnsembleModel(num_classes)
 # Load the model weights (use the appropriate file path)
-model.load_state_dict(torch.load('../models/res-mobile.pth'))
+model.load_state_dict(torch.load('../models/model_for_test.pth'))
 model = model.to(device)
 model.eval()
 
