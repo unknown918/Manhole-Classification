@@ -37,7 +37,7 @@ def parse_xml(xml_file):
             'xmax': int(bndbox.find('xmax').text),
             'ymax': int(bndbox.find('ymax').text)
         }
-    path = '../official/{}'.format(root.find('path').text)
+    path = '../official_test/{}'.format(root.find('path').text)
     name = root.find('path').text
     return path, coords, name, int(bndbox.find('xmin').text), int(bndbox.find('ymin').text), int(
         bndbox.find('xmax').text), int(bndbox.find('ymax').text)
