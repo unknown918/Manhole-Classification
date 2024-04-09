@@ -1,0 +1,26 @@
+<annotation>
+	<folder>well_2</folder>
+	<filename>well2_0036.png</filename>
+	<path>../train/lose/well2_0036.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>322</width>
+		<height>430</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>lose</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>44</xmin>
+			<ymin>173</ymin>
+			<xmax>235</xmax>
+			<ymax>350</ymax>
+		</bndbox>
+	</object>
+</annotation>

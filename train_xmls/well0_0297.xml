@@ -1,0 +1,26 @@
+<annotation>
+	<folder>well_0</folder>
+	<filename>well0_0297.jpg</filename>
+	<path>../train/good/well0_0297.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>1890</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>good</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>114</xmin>
+			<ymin>299</ymin>
+			<xmax>982</xmax>
+			<ymax>1112</ymax>
+		</bndbox>
+	</object>
+</annotation>

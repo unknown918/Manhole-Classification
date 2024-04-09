@@ -1,0 +1,26 @@
+<annotation>
+	<folder>well_5</folder>
+	<filename>well5_0009.jpg</filename>
+	<path>../train/circle/well5_0009.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>1403</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>circle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>427</ymin>
+			<xmax>960</xmax>
+			<ymax>1185</ymax>
+		</bndbox>
+	</object>
+</annotation>

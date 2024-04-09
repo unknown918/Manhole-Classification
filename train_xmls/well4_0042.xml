@@ -1,0 +1,26 @@
+<annotation>
+	<folder>well_4</folder>
+	<filename>well4_0042.jpg</filename>
+	<path>../train/uncovered/well4_0042.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>1890</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>uncovered</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>732</ymin>
+			<xmax>1068</xmax>
+			<ymax>1656</ymax>
+		</bndbox>
+	</object>
+</annotation>

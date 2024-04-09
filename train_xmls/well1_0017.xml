@@ -1,0 +1,26 @@
+<annotation>
+	<folder>well_1</folder>
+	<filename>well1_0017.jpg</filename>
+	<path>../train/broke/well1_0017.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>0</width>
+		<height>0</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>broke</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>28</xmin>
+			<ymin>206</ymin>
+			<xmax>238</xmax>
+			<ymax>340</ymax>
+		</bndbox>
+	</object>
+</annotation>
