@@ -72,29 +72,35 @@ annotations.
 ### Results
 
 - **Training Loss Curve:**
-- The training loss curve is generated after training the model, showing the progression of loss over epochs.
+  The training loss curve is generated after training the model, showing the progression of loss over epochs.
 - ![Training Loss Curve](images/loss_curve.png)
+
 - **Detection Results:**
-- Detection results are stored in results/result.txt, including image name, predicted labels,
+  Detection results are stored in results/result.txt, including image name, predicted labels,
   confidence scores, and bounding box coordinates, we also provide the visualization of the detection results.
 - ![Detection Results](images/detection_results.png)
+
 - **Feature Space Visualization:**
 - The feature space of the ensemble model is visualized using t-SNE, showing the
   distribution of features in a 2D space.
 - ![t-SNE](images/t-SNE-to-dataset.png)
+
 - **Datasets Refinement:**
 - Our t-SNE plot only requires a click to display the dataset image corresponding to each
   point, this enables you refine your dataset based on the results of t-SNE.
 - ![Datasets Refinement](images/t-SNE.png)
 
+### Computational Power Requirements
+
+Our model is trained using cloud servers, leveraging a single NVIDIA 4090 GPU, with a training time of approximately
+half an hour. For local training, a 3060 GPU is used, which takes around one hour. Additionally, a small dataset was
+utilized for local testing across Linux, macOS, and Windows platforms, confirming the accuracy and reliability of the
+training code.
+
 ### Contributors
 
 - [qianjing yang](https://github.com/unknown918)
 - [jian lei](https://github.com/LeiShang2004?query=2256726183%40qq.com)
-
-### Acknowledgments
-
-Mention any acknowledgments or credits for libraries, datasets, or tutorials used in the project.
 
 ### Contact
 
