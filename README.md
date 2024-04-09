@@ -28,7 +28,7 @@ annotations.
 1. **Clone the repository using the following command:**
 
     ```bash
-    git clone https://github.com/yourusername/yourproject.git
+    git clone https://github.com/unknown918/Manhole-Classification.git
     ```
 
 2. **Install the required packages:**
