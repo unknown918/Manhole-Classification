@@ -1,9 +1,7 @@
 from time import time
 
 import matplotlib.pyplot as plt
-import numpy as np
 import tensorflow as tf
-from sklearn.manifold import TSNE
 
 
 # 数据集加载函数，指明数据集的位置并统一处理为img_height*img_width的大小，同时设置batch
@@ -129,41 +127,7 @@ def train(epochs):
     return val_ds
 
 
-def visualize_tsne_with_boundaries(val, labels):
-    # 加载模型
-    model = tf.keras.models.load_model('../models/res_mobile.keras')
-
-    # 获取模型的倒数第二层的输出作为隐藏层表示
-    intermediate_layer_model = tf.keras.Model(inputs=model.input, outputs=model.layers[-2].output)
-    hidden_representation = intermediate_layer_model.predict(val)
-
-    # t-SNE 降维
-    tsne = TSNE(perplexity=30, learning_rate=10)
-    tsne_representation = tsne.fit_transform(hidden_representation)
-
-    # 绘制 t-SNE 可视化结果
-    plt.figure(figsize=(12, 8))
-
-    # 选择颜色映射，此处选择 'viridis'，你也可以选择其他的颜色映射
-    colors = plt.cm.viridis(np.linspace(0, 1, len(np.unique(labels))))
-
-    for i, label in enumerate(np.unique(labels)):
-        plt.scatter(tsne_representation[labels == label, 0],
-                    tsne_representation[labels == label, 1],
-                    label=f'Cluster {label}',
-                    c=[colors[i]],
-                    cmap='viridis')
-
-    plt.xlabel('t-SNE Component 1')
-    plt.ylabel('t-SNE Component 2')
-    plt.title('t-SNE Visualization with Clusters')
-    plt.legend()
-    plt.show()
-
-
 if __name__ == '__main__':
     val = train(epochs=20)
 
     labels = ['broke', 'circle', 'good', 'lose', 'uncovered']
-
-    visualize_tsne_with_boundaries(val, labels)
