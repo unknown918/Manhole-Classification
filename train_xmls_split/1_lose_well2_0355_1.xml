@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<annotation>
+  <folder>well_2</folder>
+  <filename>well2_0355.jpg</filename>
+  <path>../train/lose/well2_0355.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>4288</width>
+    <height>3216</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    
+		
+    <name>lose</name>
+    
+		
+    <pose>Unspecified</pose>
+    
+		
+    <truncated>0</truncated>
+    
+		
+    <difficult>0</difficult>
+    
+		
+    <bndbox>
+      
+			
+      <xmin>504</xmin>
+      
+			
+      <ymin>1302</ymin>
+      
+			
+      <xmax>2701</xmax>
+      
+			
+      <ymax>2381</ymax>
+      
+		
+    </bndbox>
+    
+	
+  </object>
+  
+
+</annotation>

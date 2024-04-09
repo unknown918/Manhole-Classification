@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<annotation>
+  <folder>test</folder>
+  <filename>test73.jpg</filename>
+  <path>test73.jpg</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>349</width>
+    <height>464</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    
+		
+    <name>well</name>
+    
+		
+    <pose>Unspecified</pose>
+    
+		
+    <truncated>0</truncated>
+    
+		
+    <difficult>0</difficult>
+    
+		
+    <bndbox>
+      
+			
+      <xmin>125</xmin>
+      
+			
+      <ymin>187</ymin>
+      
+			
+      <xmax>282</xmax>
+      
+			
+      <ymax>273</ymax>
+      
+		
+    </bndbox>
+    
+	
+  </object>
+  
+
+</annotation>
