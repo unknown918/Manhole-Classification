@@ -125,7 +125,7 @@ def train_model(model, criterion, optimizer, dataloader, num_epochs=10):
 
 
 def test_model(model, xml_folder, transform):
-    with open('../results.txt', 'w') as f:
+    with open('../results/result.txt', 'w') as f:
         for xml_file in os.listdir(xml_folder):
             tree = ET.parse(os.path.join(xml_folder, xml_file))
             root = tree.getroot()
@@ -159,8 +159,8 @@ def test_model(model, xml_folder, transform):
 
 
 if __name__ == '__main__':
-    train_dir = '../train_xmls'
-    test_dir = '../test_xmls'
+    train_dir = '../train_xmls_split'
+    test_dir = '../test_xmls_split'
     # 加载数据集
     dataset = CustomDataset(xml_dir=train_dir, transform=transform)
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)

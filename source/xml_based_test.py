@@ -14,7 +14,7 @@ num_classes = 5
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Define the path to your folder containing the XML files
-folder_path = 'test'
+folder_path = '../test_xmls_split'
 
 # Define the number of classes for the output layer of your network
 num_classes = 5

@@ -35,7 +35,7 @@ def load_images_from_folder(folder):
 
 
 # 加载所有子文件夹的图像路径
-root_folder = 'original'
+root_folder = 'train'
 subfolders = [os.path.join(root_folder, f) for f in os.listdir(root_folder) if
               os.path.isdir(os.path.join(root_folder, f))]
 
