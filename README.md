@@ -8,9 +8,9 @@ annotations.
 
 - `models/`: Directory to store trained model weights.
 - `results/`: Directory to store output results such as training curves and detection results.
-- `train_xmls/`: Directory containing XML annotations for training images each file correspond to multiple objects in
+- `train_xmls/`: Directory containing XML annotations for training images each file corresponds to multiple objects in
   one image.
-- `test_xmls/`: Directory containing XML annotations for testing images each file correspond to multiple objects in one
+- `test_xmls/`: Directory containing XML annotations for testing images each file corresponds to multiple objects in one
   image.
 - `datasets_expansion.py`: Utility functions to expand datasets, using six different augmentation techniques.
 - `xml_data_split.py`: Script to split XML annotations into training and testing sets.
@@ -57,12 +57,12 @@ annotations.
   training
   with TensorFlow, you can directly execute the command line above.
 - **Datasets Expansion:** We expanded the datasets using six different augmentation techniques, including rotation,
-  gaussian blur, noise addition and brightness adjustment. You can use the **datasets_expansion.py** script to expand
+  gaussian blur, noise addition, and brightness adjustment. You can use the **datasets_expansion.py** script to expand
   your datasets.
 
 ### Model Architecture
 
-- The ensemble model ensembles features from MobileNetV2, ResNet50 and YOLOv8 architectures.
+- The ensemble model ensembles features from MobileNetV2, ResNet50, and YOLOv8 architectures.
 - MobileNetV2 is used for its lightweight design and ResNet50 for its deeper architecture, providing a balance between
   speed and accuracy.
 - YOLOv8 is used for its object detection capabilities, which are combined with the classification features of
@@ -87,7 +87,7 @@ annotations.
 
 - **Datasets Refinement:**
 - Our t-SNE plot only requires a click to display the dataset image corresponding to each
-  point, this enables you refine your dataset based on the results of t-SNE.
+  point, this enables you to refine your dataset based on the results of t-SNE.
   ![Datasets Refinement](images/t-SNE.png)
 
 ### Computational Power Requirements
@@ -99,12 +99,12 @@ training code.
 
 ### Contributors
 
-- [qianjing yang](https://github.com/unknown918)
-- [jian lei](https://github.com/LeiShang2004?query=2256726183%40qq.com)
+- [Qianjing Yang](https://github.com/unknown918)
+- [Jian Lei](https://github.com/LeiShang2004?query=2256726183%40qq.com)
 
 ### Contact
 
-For any inquiries or issues, please contact 8208221520@csu.edu.cn.
+For any inquiries or issues, please contact [our email](8208221520@csu.edu.cn).
 
 
 
