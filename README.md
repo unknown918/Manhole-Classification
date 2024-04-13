@@ -81,12 +81,12 @@ annotations.
   ![Detection Results](images/detection_results.png)
 
 - **Feature Space Visualization:**
-- The feature space of the ensemble model is visualized using t-SNE, showing the
+  The feature space of the ensemble model is visualized using t-SNE, showing the
   distribution of features in a 2D space.
   ![t-SNE](images/t-SNE-to-dataset.png)
 
 - **Datasets Refinement:**
-- Our t-SNE plot only requires a click to display the dataset image corresponding to each
+  Our t-SNE plot only requires a click to display the dataset image corresponding to each
   point, this enables you to refine your dataset based on the results of t-SNE.
   ![Datasets Refinement](images/t-SNE.png)
 
