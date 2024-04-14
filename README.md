@@ -97,6 +97,9 @@ half an hour. For local training, a 3060 GPU is used, which takes around one hou
 utilized for local testing across Linux, macOS, and Windows platforms, confirming the accuracy and reliability of the
 training code.
 
+### License
+This project uses MIT License.
+ 
 ### Contributors
 
 - [Qianjing Yang](https://github.com/unknown918)
