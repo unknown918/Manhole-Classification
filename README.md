@@ -98,12 +98,13 @@ utilized for local testing across Linux, macOS, and Windows platforms, confirmin
 training code.
 
 ### License
-This project uses MIT License.
+This project uses an MIT License.
  
-### Contributors
+### Contributors(Equal Contributions)
 
 - [Qianjing Yang](https://github.com/unknown918)
 - [Jian Lei](https://github.com/LeiShang2004?query=2256726183%40qq.com)
+- [Xujia Zhang](https://github.com/Tide-sunrise)
 
 ### Contact
 
