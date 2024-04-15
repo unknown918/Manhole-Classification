@@ -15,7 +15,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 num_classes = 5
 batch_size = 32
 learning_rate = 0.001
-num_epochs = 40
+num_epochs = 50
 
 # 数据预处理
 transform = transforms.Compose([
@@ -115,17 +115,15 @@ def train_model(model, criterion, optimizer, dataloader, num_epochs=10):
         print(f'Loss: {epoch_loss:.4f}')
 
         path = '../models/winwin.pth'
-        torch.save(model.state_dict(), path)
+        torch.save(model, path)
         print(f'Model saved to {path}')
 
     # 绘制训练曲线
     plot_training_curve(train_losses)
 
-    return model
-
 
 def test_model(model, xml_folder, transform):
-    with open('../results/result.txt', 'w') as f:
+    with open('../results.txt', 'w') as f:
         for xml_file in os.listdir(xml_folder):
             tree = ET.parse(os.path.join(xml_folder, xml_file))
             root = tree.getroot()
@@ -150,7 +148,7 @@ def test_model(model, xml_folder, transform):
                 predicted_index = probabilities.argmax(1).item()
                 confidence = probabilities.max(1).values.item()
                 # predicted_label = {0: 'good', 1: 'broke', 2: 'lose', 3: 'uncovered', 4: 'circle'}
-            result = '{}  {}  {}  {}  {}  {}\n'.format(
+            result = '{}  {}  {}  {}  {}  {}  {}\n'.format(
                 root.find('path').text, predicted_index, confidence, xmin, ymin, xmax, ymax
             )
             print(result)
@@ -173,7 +171,10 @@ if __name__ == '__main__':
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
     # 训练模型
-    trained_model = train_model(model, criterion, optimizer, dataloader, num_epochs=num_epochs)
+    train_model(model, criterion, optimizer, dataloader, num_epochs=num_epochs)
+
+    saved_model_path = '../models/winwin.pth'
+    trained_model = torch.load(saved_model_path)
 
     # 测试模型
     test_model(trained_model, test_dir, transform)
