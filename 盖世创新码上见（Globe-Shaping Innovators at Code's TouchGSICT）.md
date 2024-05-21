@@ -1,4 +1,4 @@
-**团队名称**：盖世创新码上见（Globe-Shaping Innovators at Code's Touch/GSICT）
+**团队名称** Globe-Shaping Innovators at Code's Touch/GSICT
 
 **团队构成**
 
